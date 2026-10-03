@@ -1,11 +1,88 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Welcome from '../components/Welcome.astro';
+import astroLogo from '../assets/astro.svg';
+import background from '../assets/background.svg';
 ---
 
 <Layout>
 	<Welcome />
+	<div class="bp-container">
+		<section class="bp-hero">
+			<div class="bp-bg" aria-hidden="true">
+				<img src={background.src} alt="" fetchpriority="high" />
+			</div>
+			<div class="bp-content">
+				<h1>Instituto de Evaluaciones Psicolométricas y de Seguridad</h1>
+				<p class="bp-subtitle">Evaluaciones especializadas para la seguridad y el cumplimiento normativo</p>
+				<div class="bp-btn-group">
+					<a href="#services" class="bp-button">Conocer nuestros exámenes</a>
+					<a href="#locations" class="bp-button">Sede Ciudad</a>
+				</div>
+			</div>
+		</section>
+
+		<section id="services" class="bp-services">
+			<h2 class="bp-section-title">Exámenes ofrecidos</h2>
+			<div class="bp-service-grid">
+				<div class="bp-service-card">
+					<h3>Manejo de armas de fuego</h3>
+					<p>Exámenes psicotécnicos y de evaluación psicológica para la obtención, renovación y cancelación de licencias de manejo de armas de fuego, conforme a la normativa vigente.</p>
+				</div>
+				<div class="bp-service-card">
+					<h3>Exámenes ocupacionales</h3>
+					<p>Evaluaciones de aptitud, salud mental y condiciones psicofísicas para procesos de selección y evaluación de desempeño en entornos laborales.</p>
+				</div>
+				<div class="bp-service-card">
+					<h3>Renovación de licencias de conducción</h3>
+					<p>Exámenes médicos y psicotécnicos para la renovación de licencias de conducir, incluyendo pruebas de visión, reaccionamiento y evaluación de condiciones psicofísicas.</p>
+				</div>
+			</div>
+		</section>
+
+		<section id="locations" class="bp-locations">
+			<h2 class="bp-section-title">Sedes</h2>
+			<div class="bp-grid-cols-2">
+				<div class="bp-location-card">
+					<h3>Medellín</h3>
+					<address>
+						Cra. 50 No. 7A-30, Oficina 402<br>
+						0 Medellín, Antioquia<br>
+						Colombia
+					</address>
+					<p>Línea directa: +57 4 444 1111</p>
+				</div>
+				<div class="bp-location-card">
+					<h3>Bogotá</h3>
+					<address>
+						Cl. 7 No. 26-50, Piso 3<br>
+						Bogotá D.C., Colombia<br>
+					</address>
+					<p>Línea directa: +57 1 555 2222</p>
+				</div>
+			</div>
+		</section>
+
+		<footer class="bp-footer">
+			<div class="bp-footer-content">
+				<img
+					src={astroLogo.src}
+					width="120"
+					height="50"
+					alt="IPS Evaluaciones"
+					style="margin-bottom: 1rem; display: block;"
+				/>
+				<p class="bp-footer-desc">
+				Evaluaciones especializadas para la seguridad y el cumplimiento normativo desde 2024.
+				</p>
+				<div class="bp-footer-links">
+					<a href="mailto:contacto@ips-evaluaciones.co">contacto@ips-evaluaciones.co</a>
+					<a href="https://wa.me/573001234567">WhatsApp</a>
+				</div>
+			</div>
+			<small class="bp-footer-copyright">
+				© 2026 Instituto de Evaluaciones Psicolométricas y de Seguridad. Todos los derechos reservados.
+			</small>
+		</footer>
+	</div>
 </Layout>
